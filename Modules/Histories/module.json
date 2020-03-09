@@ -1,0 +1,13 @@
+{
+    "name": "Histories",
+    "alias": "histories",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Histories\\Providers\\HistoriesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
