@@ -13,5 +13,7 @@
 
 Route::prefix('histories')->group(function() {
     Route::get('/', 'HistoriesController@index');
+    Route::get('/article', 'ArticleController@index');
     Route::get('/users/{user}/history', 'HistoriesController@histories');
+    Route::get('/articles/{article}/history','ArticleController@articleHistory');
 });

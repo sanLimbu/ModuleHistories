@@ -5,37 +5,26 @@ namespace Modules\Histories\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use App\User;
-use Illuminate\Support\Str;
+use Modules\Histories\Entities\Article;
 
-class HistoriesController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
      * @return Response
      */
-
     public function index()
     {
-        $user = User::find(1);
-            $user->update([
-              'name' => 'santosh'
-            ]);
-
-
-
-            // $user->history()->create([
-            //   'changed_column' => 'name',
-            //   'changed_value_from' => 'santosh',
-            //   'changed_value_to'   => 'devika'
-            //
-            // ]);
+        $article = Article::find(1);
+        $article->update([
+          'body' => 'THis is san Article'
+        ]);
     }
 
-    public function histories(User $user)
+    public function articleHistory(Article $article)
     {
-      return view('histories::users.history', [
-        'histories' => $user->history
+      return view('histories::users.history',[
+        'histories' => $article->history
       ]);
     }
 
