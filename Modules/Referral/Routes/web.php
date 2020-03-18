@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +10,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::group(['prefix' => 'referrals','namespace' => 'Referrals'], function() {
+//     Route::get('/', 'ReferralController@index')->name('referrals');
+//     Route::post('/', 'ReferralController@store');
+// });
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('referral')->group(function() {
+    Route::get('/', 'ReferralController@index')->name('referrals');
+    Route::post('/', 'ReferralController@store');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -2,5 +2,6 @@
     "Histories": true,
     "Product": false,
     "Model": true,
-    "Cart": true
+    "Cart": true,
+    "Referral": true
 }
