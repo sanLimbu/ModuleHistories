@@ -31,7 +31,7 @@
                           @if($referral->completed)
                             Yes
                           @else
-                              No &nbsp; <a href="">Get Link</a>
+                              No &nbsp; <a href="{{ route('index',['referral' => $referral->token])}}" target="_blank">Get Link</a>
                           @endif
                           </td>
                         </tr>

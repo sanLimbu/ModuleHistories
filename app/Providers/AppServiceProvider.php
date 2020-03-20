@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Providers;
+use Illuminate\Http\Request;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Referral\Entities\Referral;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Request::macro('referral', function($token) {
+          $referral = Referral::whereToken($token)
+                    ->whereNotCompleted()
+                    ->whereNotFromUser(request()->user())
+                    ->first();
+        });
     }
 }

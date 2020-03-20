@@ -15,7 +15,13 @@
 //     Route::post('/', 'ReferralController@store');
 // });
 
-Route::prefix('referral')->group(function() {
+
+Route::prefix('referrals')->group(function() {
     Route::get('/', 'ReferralController@index')->name('referrals');
     Route::post('/', 'ReferralController@store');
+});
+
+Route::prefix('subscriptions')->group(function() {
+    Route::get('/', 'SubscriptionController@index')->name('subscriptions');
+    Route::post('/', 'SubscriptionController@store');
 });
